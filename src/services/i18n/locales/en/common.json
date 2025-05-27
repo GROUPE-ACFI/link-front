@@ -7,8 +7,10 @@
     "signUp": "Sign Up",
     "profile": "Profile",
     "users": "Users",
+    "usersCreate": "Create User",
     "companies": "Companies",
     "companiesCreate": "Create Company",
+    "adminPanel": "Admin Panel",
     "logout": "Logout"
   },
   "formInputs": {

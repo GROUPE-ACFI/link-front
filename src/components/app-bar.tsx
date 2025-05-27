@@ -115,6 +115,16 @@ function ResponsiveAppBar() {
               {!!user?.role &&
                 [RoleEnum.ADMIN].includes(Number(user?.role?.id)) && [
                   <MenuItem
+                    key="admin-panel"
+                    onClick={handleCloseNavMenu}
+                    component={Link}
+                    href="/admin-panel"
+                  >
+                    <Typography textAlign="center">
+                      {t("common:navigation.adminPanel")}
+                    </Typography>
+                  </MenuItem>,
+                  <MenuItem
                     key="companies"
                     onClick={handleCloseNavMenu}
                     component={Link}
@@ -142,6 +152,16 @@ function ResponsiveAppBar() {
                   >
                     <Typography textAlign="center">
                       {t("common:navigation.users")}
+                    </Typography>
+                  </MenuItem>,
+                  <MenuItem
+                    key="users-create"
+                    onClick={handleCloseNavMenu}
+                    component={Link}
+                    href="/admin-panel/users/create"
+                  >
+                    <Typography textAlign="center">
+                      {t("common:navigation.usersCreate")}
                     </Typography>
                   </MenuItem>,
                   // mobile-menu-items
@@ -206,6 +226,14 @@ function ResponsiveAppBar() {
               [RoleEnum.ADMIN].includes(Number(user?.role?.id)) && (
                 <>
                   <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                    component={Link}
+                    href="/admin-panel"
+                  >
+                    {t("common:navigation.adminPanel")}
+                  </Button>
+                  <Button
                     onClick={handleOpenCompaniesMenu}
                     sx={{ my: 2, color: "white", display: "block" }}
                   >
@@ -252,6 +280,14 @@ function ResponsiveAppBar() {
                     href="/admin-panel/users"
                   >
                     {t("common:navigation.users")}
+                  </Button>
+                  <Button
+                    onClick={handleCloseNavMenu}
+                    sx={{ my: 2, color: "white", display: "block" }}
+                    component={Link}
+                    href="/admin-panel/users/create"
+                  >
+                    {t("common:navigation.usersCreate")}
                   </Button>
                   {/* desktop-menu-items */}
                 </>
